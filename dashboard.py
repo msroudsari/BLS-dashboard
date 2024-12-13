@@ -67,7 +67,7 @@ bar_fig = px.bar(
 bar_fig.update_layout(
     xaxis=dict(
         tickmode='array',
-        tickvals=yearly_data['year'],  # Set tick values to exact years
+        tickvals=yearly_data['year'],
     )
 )
 
@@ -79,6 +79,12 @@ line_fig = px.line(
     labels={'value': 'Total Value', 'year': 'Year'},
     line_shape='linear',
     markers=True
+)
+bar_fig.update_layout(
+    xaxis=dict(
+        tickmode='array',
+        tickvals=yearly_data['year'],
+    )
 )
 
 box_fig = px.box(
