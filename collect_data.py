@@ -40,7 +40,7 @@ def collect_bls_data(api_key):
         df = pd.DataFrame(records)
         return df
     else:
-        raise ValueError("Error retrieving data: " + data.get('message', 'Unknown error'))
+        raise ValueError("Error retrieving data: ")
 
 def save_data(df, file_path='bls_data.csv'):
     try:
@@ -53,7 +53,7 @@ def save_data(df, file_path='bls_data.csv'):
 if __name__ == "__main__":
     api_key = os.getenv("BLS_API_KEY")
     if not api_key:
-        raise ValueError("API key not found. Set the BLS_API_KEY environment variable.")
+        raise ValueError("API key not found")
     
     df = collect_bls_data(api_key)
     save_data(df)
